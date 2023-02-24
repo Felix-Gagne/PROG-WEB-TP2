@@ -1,0 +1,23 @@
+<main>
+    <div class="row">
+        <div class="search">
+            <h3 id="ajout">Ajouter un artiste</h3>
+            <form>
+                <input class="inputNomArtiste" type="text" name="artistName" placeholder="Veuillez entrer le nom d'un artiste">
+                <button class="btn btn-primary rechercher" style="margin-left: 10px;">Ajouter</button>
+            </form>
+        </div>
+        <div class="display">
+            <h3 class="vosArtiste">Vos artistes</h3>
+            <div class="row">
+                <!-- Liste d'artistes ajoutés aux favoris -->
+                <div>
+                    <h4 style="text-align: center;">Artiste 1</h4>
+                    <img src="../assets/images/Menu.jpg" alt="Artiste 1">
+                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album']">Albums</button>
+                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/concert']">Concerts</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
