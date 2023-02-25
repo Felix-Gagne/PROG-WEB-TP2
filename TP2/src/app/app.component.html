@@ -1,11 +1,11 @@
 <div>
-    <header>
+    <header class="entete">
         <div class="row">
             <div class="col titreApp">
-                <h3>SuperMusique</h3>
+                <h2 class="text" [routerLink]="'/home'">SuperMusique</h2>
             </div>
             <div class="col menuLangue">
-                <select name="language" id="language">
+                <select class="langue" name="language" id="language">
                     <option value="fr-ca">Français</option>
                     <option value="en-us">English</option>
                 </select>
@@ -16,7 +16,7 @@
     <router-outlet></router-outlet>
 
     <footer>
-        <div>
+        <div class="text">
             &copy; Tous droits réservés à Spotify, BandsInTown et Google
         </div>
     </footer>
