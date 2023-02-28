@@ -114,6 +114,11 @@ main .row>div{
     margin-bottom: 10px;
 }
 
+.delete{
+    margin: auto;
+    display: block;
+}
+
 /*
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 █ Page artiste seulement █

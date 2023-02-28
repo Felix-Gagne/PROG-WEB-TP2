@@ -1,5 +1,9 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { SpotifyService } from './services/spotify.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Injectable } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -7,6 +11,7 @@ import { ConcertComponent } from './concert/concert.component';
 import { AlbumComponent } from './album/album.component';
 import { SongComponent } from './song/song.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,13 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     ConcertComponent,
     AlbumComponent,
-    SongComponent
+    SongComponent, 
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: "", redirectTo: "/home", pathMatch: "full"},
       {path: "home", component: HomeComponent},
@@ -27,7 +34,11 @@ import { RouterModule } from '@angular/router';
       {path: "song", component: SongComponent}
     ])
   ],
-  providers: [],
+  providers: [
+    SpotifyService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
