@@ -148,6 +148,8 @@ main .row>div{
     flex-basis: 29.5%;
     text-align:center;
     border:white 2px solid;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .display .row>div>img{
@@ -162,6 +164,7 @@ main .row>div{
 
 .albums{
     flex:3;
+    margin-left: 36px;
 }
 
 .albums .row{
@@ -176,7 +179,8 @@ main .row>div{
     flex-basis: 22.2%;
     text-align:center;
     border:lightgray 2px solid;
-    margin-left: 36px;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .albums .row>div>img{
