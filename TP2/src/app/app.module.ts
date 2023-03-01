@@ -12,6 +12,7 @@ import { AlbumComponent } from './album/album.component';
 import { SongComponent } from './song/song.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TrustPipe } from './pipe/trust.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ConcertComponent,
     AlbumComponent,
-    SongComponent, 
+    SongComponent,
+    TrustPipe, 
   ],
   imports: [
     BrowserModule,

@@ -19,16 +19,16 @@ export class SongComponent implements OnInit {
 
   songId : string = "";
   songUrl : string = "";
-  safeUrl : string = "";
+  safeUrl : SafeResourceUrl = "";
 
   enabled : boolean = false;
 
   constructor(public route : ActivatedRoute, public spotify : SpotifyService, public stockage : StockageService, public http : HttpClient,
     public sanitizer : DomSanitizer) { }
 
-    getSafeUrl() : SafeResourceUrl {
-      return this.sanitizer.bypassSecurityTrustResourceUrl(this.songUrl);
-    }
+    // getSafeUrl(url : string) : SafeResourceUrl {
+    //   return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    // }
 
   ngOnInit(): void 
   {
@@ -61,6 +61,7 @@ export class SongComponent implements OnInit {
 
     this.songId = x.items[0].id.videoId;
     this.songUrl = "https://youtube.com/embed/" + this.songId;
+    console.log(this.safeUrl);
 
     this.enabled = true;
   }
