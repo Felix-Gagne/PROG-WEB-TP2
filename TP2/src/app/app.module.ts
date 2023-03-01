@@ -29,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule.forRoot([
       {path: "", redirectTo: "/home", pathMatch: "full"},
       {path: "home", component: HomeComponent},
-      {path: "album", component: AlbumComponent},
+      {path: "album/:artistName", component: AlbumComponent},
       {path: "concert", component: ConcertComponent},
       {path: "song", component: SongComponent}
     ])

@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
 
   artists : Artist[]=[];
 
+  delete : boolean = false;
+
+  dejaPresent : boolean = false;
+
   constructor(public spotify : SpotifyService) { }
 
   ngOnInit(): void 
@@ -34,6 +38,7 @@ export class HomeComponent implements OnInit {
     {
       this.artists.push(this.artist);
       localStorage.setItem("artists", JSON.stringify(this.artists));
+      this.dejaPresent = false;
     }
 
     console.log(this.artists);
@@ -42,5 +47,10 @@ export class HomeComponent implements OnInit {
   clearLocal(){
     localStorage.clear();
     this.artists = [];
+
+    if(this.dejaPresent == true)
+    {
+      this.dejaPresent = false;
+    }
   }
 }

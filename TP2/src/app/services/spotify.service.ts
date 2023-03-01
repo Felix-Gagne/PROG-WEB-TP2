@@ -43,6 +43,8 @@ export class SpotifyService
         let x = await lastValueFrom(this.http.get<any>('https://api.spotify.com/v1/search?type=artist&offset=0&limit=1&q=' + 
         artist, httpOptions));
         console.log(x);
-        return new Artist(x.artists.items[0].id, x.artists.items[0].name, x.artists.items[0].images[2].url);
+        return new Artist(x.artists.items[0].id, x.artists.items[0].name, x.artists.items[0].images[0].url);
   }
+
+  //async getAlbum(artist : Artist)
 }

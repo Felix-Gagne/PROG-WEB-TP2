@@ -161,6 +161,11 @@ main .row>div{
     width:100%;
 }
 
+.textErrorExist{
+    color: red;
+    margin-left: 10px;
+}
+
 /*
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 █  Page album seulement  █

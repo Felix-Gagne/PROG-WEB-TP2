@@ -2,6 +2,7 @@
     <div class="row">
         <div class="search">
             <h3 class="text" id="ajout">Ajouter un artiste</h3>
+            <p class="textErrorExist" *ngIf="dejaPresent == true">Cet artiste est déjà dans vos favoris</p>
             <form (ngSubmit)="getArtist()">
                 <span class="row inputTextArtist">
                     <input type="text" [(ngModel)]="artistName" name="artistName" placeholder="Drake">
@@ -17,14 +18,14 @@
                 <!-- Liste d'artistes ajoutés aux favoris -->
                 <div *ngFor="let mesArtiste of artists">
                     <h4 class="text" style="text-align: center;">{{mesArtiste.name}}</h4>
-                    <img src="{{mesArtiste.imageUrl}}" alt="{{mesArtiste.name}">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album']">Albums</button>
+                    <img src="{{mesArtiste.imageUrl}}" alt="{{mesArtiste.name}}">
+                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album', mesArtiste.name]">Albums</button>
                     <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/concert']">Concerts</button>
                 </div>
             </div>
-            <form (ngSubmit)="clearLocal()">
-                <input type="submit" value="Supprimer la liste" class="btn btn-primary delete">
-            </form>
+                <form (ngSubmit)="clearLocal()">
+                    <input type="submit" value="Supprimer la liste" class="btn btn-primary delete">
+                </form>
         </div>
     </div>
 </main>

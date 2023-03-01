@@ -1,7 +1,7 @@
 <main>
     <div class="row">
         <div class="albums">
-            <h3 class="text" style="text-align: center;">Albums de l'artiste X</h3>
+            <h3 class="text" style="text-align: center;" *ngIf="artistName != null">Albums de {{artistName}}</h3>
             <div class="row">
                 <!-- Liste d'albums d'un artiste choisi -->
                 <div>
