@@ -31,7 +31,7 @@ import { FormsModule } from '@angular/forms';
       {path: "home", component: HomeComponent},
       {path: "album/:artistName", component: AlbumComponent},
       {path: "concert", component: ConcertComponent},
-      {path: "song", component: SongComponent}
+      {path: "song/:albumName", component: SongComponent}
     ])
   ],
   providers: [

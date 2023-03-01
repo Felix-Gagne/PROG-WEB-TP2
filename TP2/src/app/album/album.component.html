@@ -7,7 +7,7 @@
                 <div *ngFor="let lesAlbums of stockage.albums">
                     <h4 class="text">{{lesAlbums.name}}</h4>
                     <img src="{{lesAlbums.imageUrl}}" alt="{{lesAlbums.name}}">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
+                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/song', lesAlbums.name]">Chansons</button>
                 </div>
             </div>
         </div>
