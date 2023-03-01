@@ -4,59 +4,9 @@
             <h3 class="text" style="text-align: center;" *ngIf="artistName != null">Albums de {{artistName}}</h3>
             <div class="row">
                 <!-- Liste d'albums d'un artiste choisi -->
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
-                </div>
-                <div>
-                    <h4 class="text">Album 1</h4>
-                    <img src="../assets/images/lofi.jpg" alt="album 1">
+                <div *ngFor="let lesAlbums of stockage.albums">
+                    <h4 class="text">{{lesAlbums.name}}</h4>
+                    <img src="{{lesAlbums.imageUrl}}" alt="{{lesAlbums.name}}">
                     <button class="btn btn-primary btnAlbumConcert" [routerLink]="'/song'">Chansons</button>
                 </div>
             </div>

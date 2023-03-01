@@ -16,7 +16,7 @@
             <h3 class="vosArtiste text">Vos artistes</h3>
             <div class="row">
                 <!-- Liste d'artistes ajoutés aux favoris -->
-                <div *ngFor="let mesArtiste of artists">
+                <div *ngFor="let mesArtiste of stockage.artists">
                     <h4 class="text" style="text-align: center;">{{mesArtiste.name}}</h4>
                     <img src="{{mesArtiste.imageUrl}}" alt="{{mesArtiste.name}}">
                     <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album', mesArtiste.name]">Albums</button>

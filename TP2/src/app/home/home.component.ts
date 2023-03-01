@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../services/spotify.service';
 import { Artist } from '../modele/artist';
+import { StockageService } from '../services/stockage.service';
 
 @Component({
   selector: 'app-home',
@@ -13,13 +14,11 @@ export class HomeComponent implements OnInit {
   artistName : string = "";
   artist : Artist | undefined;
 
-  artists : Artist[]=[];
-
   delete : boolean = false;
 
   dejaPresent : boolean = false;
 
-  constructor(public spotify : SpotifyService) { }
+  constructor(public spotify : SpotifyService, public stockage : StockageService) { }
 
   ngOnInit(): void 
   {
@@ -27,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.jsonData = localStorage.getItem("artists");
     if(this.jsonData != null)
     {
-      this.artists = JSON.parse(this.jsonData);
+      this.stockage.artists = JSON.parse(this.jsonData);
     }
   }
 
@@ -36,17 +35,17 @@ export class HomeComponent implements OnInit {
 
     if(this.artist != undefined)
     {
-      this.artists.push(this.artist);
-      localStorage.setItem("artists", JSON.stringify(this.artists));
+      this.stockage.artists.push(this.artist);
+      localStorage.setItem("artists", JSON.stringify(this.stockage.artists));
       this.dejaPresent = false;
     }
 
-    console.log(this.artists);
+    console.log(this.stockage.artists);
   }
 
   clearLocal(){
     localStorage.clear();
-    this.artists = [];
+    this.stockage.artists = [];
 
     if(this.dejaPresent == true)
     {
