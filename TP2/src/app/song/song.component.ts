@@ -15,6 +15,7 @@ import { StockageService } from '../services/stockage.service';
 export class SongComponent implements OnInit {
 
   albumName : string | null = null;
+  artistName : string | null = null;
   album ?: Album;
 
   songId : string = "";
@@ -26,13 +27,10 @@ export class SongComponent implements OnInit {
   constructor(public route : ActivatedRoute, public spotify : SpotifyService, public stockage : StockageService, public http : HttpClient,
     public sanitizer : DomSanitizer) { }
 
-    // getSafeUrl(url : string) : SafeResourceUrl {
-    //   return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    // }
-
   ngOnInit(): void 
   {
     this.albumName = this.route.snapshot.paramMap.get("albumName");
+    this.artistName = this.route.snapshot.paramMap.get("artistName");
     this.getSongs();
   }
 
@@ -55,13 +53,12 @@ export class SongComponent implements OnInit {
   async playSong(songName : string) : Promise<void>
   {
     console.log(songName);
-    let x = await lastValueFrom(this.http.get<any>("https://www.googleapis.com/youtube/v3/search?type=video&part=id&maxResults=1&key=AIzaSyBkS79RFn3dhqZCLl6ARGu8dZUSAKeK6m8&q=" + songName));
+    let x = await lastValueFrom(this.http.get<any>("https://www.googleapis.com/youtube/v3/search?type=video&part=id&maxResults=1&key=AIzaSyBkS79RFn3dhqZCLl6ARGu8dZUSAKeK6m8&q=" + songName + this.artistName));
     console.log(x);
     console.log(x.items[0].id.videoId);
 
     this.songId = x.items[0].id.videoId;
     this.songUrl = "https://youtube.com/embed/" + this.songId;
-    console.log(this.safeUrl);
 
     this.enabled = true;
   }

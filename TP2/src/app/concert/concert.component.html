@@ -1,46 +1,14 @@
 <main>
-    <h3 class="text" style="margin-left: 5px;">Concerts de l'artiste X</h3>
+    <h3 class="text" style="margin-left: 5px;">Concerts de {{artistName}}</h3>
     <div class="row">
         <img src="../assets/images/googlemap.png" alt="Google Map" class="map">
         <div class="shows">
-
              <!-- Liste des concerts -->
-            <div class="lesShow">
-                <h4 class="text">Jan 1, 2024, 8:00:00 PM</h4>
-                <p class="text">Pays : </p>
-                <p class="text">Ville : </p>
+            <div class="lesShow" *ngFor="let concert of stockage.concerts">
+                <h4 class="text">{{concert.date | date : 'medium' }}</h4>
+                <p class="text">Pays : {{concert.country}}</p>
+                <p class="text">Ville : {{concert.city}}</p>
             </div>
-            <div class="lesShow">
-                <h4 class="text">Jan 1, 2024, 8:00:00 PM</h4>
-                <p class="text">Pays : </p>
-                <p class="text">Ville : </p>
-            </div>
-            <div class="lesShow">
-                <h4 class="text">Jan 1, 2024, 8:00:00 PM</h4>
-                <p class="text">Pays : </p>
-                <p class="text">Ville : </p>
-            </div>
-            <div class="lesShow">
-                <h4 class="text">Jan 1, 2024, 8:00:00 PM</h4>
-                <p class="text">Pays : </p>
-                <p class="text">Ville : </p>
-            </div>
-            <div class="lesShow">
-                <h4 class="text">Jan 1, 2024, 8:00:00 PM</h4>
-                <p class="text">Pays : </p>
-                <p class="text">Ville : </p>
-            </div>
-            <div class="lesShow">
-                <h4 class="text">Jan 1, 2024, 8:00:00 PM</h4>
-                <p class="text">Pays : </p>
-                <p class="text">Ville : </p>
-            </div>
-            <div class="lesShow">
-                <h4 class="text">Jan 1, 2024, 8:00:00 PM</h4>
-                <p class="text">Pays : </p>
-                <p class="text">Ville : </p>
-            </div>
-        </div>           
-
+        </div>
     </div>
 </main>

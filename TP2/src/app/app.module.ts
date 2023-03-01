@@ -32,8 +32,8 @@ import { TrustPipe } from './pipe/trust.pipe';
       {path: "", redirectTo: "/home", pathMatch: "full"},
       {path: "home", component: HomeComponent},
       {path: "album/:artistName", component: AlbumComponent},
-      {path: "concert", component: ConcertComponent},
-      {path: "song/:albumName", component: SongComponent}
+      {path: "concert/:artistName", component: ConcertComponent},
+      {path: "song/:albumName/:artistName", component: SongComponent}
     ])
   ],
   providers: [

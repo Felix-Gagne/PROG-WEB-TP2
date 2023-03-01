@@ -20,11 +20,11 @@
                     <h4 class="text" style="text-align: center;">{{mesArtiste.name}}</h4>
                     <img src="{{mesArtiste.imageUrl}}" alt="{{mesArtiste.name}}">
                     <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album', mesArtiste.name]">Albums</button>
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/concert']">Concerts</button>
+                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/concert', mesArtiste.name]">Concerts</button>
                 </div>
             </div>
                 <form (ngSubmit)="clearLocal()">
-                    <input type="submit" value="Supprimer la liste" class="btn btn-primary delete">
+                    <input type="submit" value="Supprimer vos favoris" class="btn btn-primary delete">
                 </form>
         </div>
     </div>

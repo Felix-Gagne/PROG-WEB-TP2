@@ -1,3 +1,4 @@
+import { Concert } from './../modele/concert';
 import { Injectable } from '@angular/core';
 import { Artist } from '../modele/artist';
 import { Album } from '../modele/album';
@@ -11,4 +12,5 @@ export class StockageService
   artists : Artist[]=[];
   albums : Album[] = [];
   songs : Song[] = [];
+  concerts : Concert[] = [];
 }
