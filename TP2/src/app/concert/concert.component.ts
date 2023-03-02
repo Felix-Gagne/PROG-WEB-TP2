@@ -43,11 +43,11 @@ export class ConcertComponent implements OnInit {
   {
     for(let i = 0; i <= this.stockage.concerts.length; i++)
     {
-      if(this.stockage.concerts[i].lat != undefined)
+      if(this.stockage.concerts[i] != undefined)
       {
-        this.markerPositions.push({lat : this.stockage.concerts[i].lat, lng : this.stockage.concerts[i].lat});
-        console.log(this.markerPositions);
+        this.markerPositions.push({lat : parseFloat(this.stockage.concerts[i].lat), lng : parseFloat(this.stockage.concerts[i].lon)});
       }
     }
+    console.log(this.markerPositions);
   }
 }

@@ -1,4 +1,4 @@
 export class Concert 
 {
-    constructor(public lat : number, public lon : number, public city : string, public country : string, public date : string){}
+    constructor(public lat : string, public lon : string, public city : string, public country : string, public date : string){}
 }

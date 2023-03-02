@@ -13,12 +13,14 @@ export class HomeComponent implements OnInit {
   jsonData : string | null = null;
   artistName : string = "";
   artist : Artist | undefined;
+  
 
   delete : boolean = false;
 
   dejaPresent : boolean = false;
 
-  constructor(public spotify : SpotifyService, public stockage : StockageService) { }
+  constructor(public spotify : SpotifyService, public stockage : StockageService) { 
+  }
 
   ngOnInit(): void 
   {

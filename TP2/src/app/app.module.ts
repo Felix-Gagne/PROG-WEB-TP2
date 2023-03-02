@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TrustPipe } from './pipe/trust.pipe';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,14 @@ import { GoogleMapsModule } from '@angular/google-maps';
       {path: "album/:artistName", component: AlbumComponent},
       {path: "concert/:artistName", component: ConcertComponent},
       {path: "song/:albumName/:artistName", component: SongComponent}
-    ])
+    ]),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     SpotifyService,
@@ -46,3 +55,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 })
 
 export class AppModule { }
+
+export function HttpLoaderFactory(http : HttpClient){
+  return new TranslateHttpLoader(http);
+}

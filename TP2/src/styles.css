@@ -261,14 +261,14 @@ main>h3{
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 */
 
-.map{
-    width:100%;
-    flex-basis: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 400px;
+.myMap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mapDiv{
+    text-align: center;
 }
 
 .shows{
