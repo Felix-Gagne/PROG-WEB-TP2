@@ -28,6 +28,10 @@ export class HomeComponent implements OnInit {
     {
       this.stockage.artists = JSON.parse(this.jsonData);
     }
+    if(this.jsonData != null)
+    {
+      this.delete = true;
+    }
   }
 
   async getArtist() : Promise<void>{
@@ -35,9 +39,21 @@ export class HomeComponent implements OnInit {
 
     if(this.artist != undefined)
     {
+      const found = this.stockage.artists.some(el => el.id === this.artist?.id);
+      if(found)
+      {
+        this.dejaPresent = true;
+      }
+      else
+      {
       this.stockage.artists.push(this.artist);
       localStorage.setItem("artists", JSON.stringify(this.stockage.artists));
-      this.dejaPresent = false;
+      this.delete = true;
+        if(this.dejaPresent = true)
+        {
+          this.dejaPresent = false;
+        }
+      }
     }
 
     console.log(this.stockage.artists);
@@ -47,7 +63,12 @@ export class HomeComponent implements OnInit {
     localStorage.clear();
     this.stockage.artists = [];
 
-    if(this.dejaPresent == true)
+    console.log(this.stockage.artists);
+    if(this.delete = true)
+    {
+      this.delete = false;
+    }
+    if(this.dejaPresent = true)
     {
       this.dejaPresent = false;
     }

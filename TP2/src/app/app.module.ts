@@ -13,6 +13,7 @@ import { SongComponent } from './song/song.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TrustPipe } from './pipe/trust.pipe';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TrustPipe } from './pipe/trust.pipe';
     FormsModule,
     RouterModule,
     HttpClientModule,
+    GoogleMapsModule,
     RouterModule.forRoot([
       {path: "", redirectTo: "/home", pathMatch: "full"},
       {path: "home", component: HomeComponent},

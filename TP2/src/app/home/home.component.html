@@ -23,7 +23,7 @@
                     <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/concert', mesArtiste.name]">Concerts</button>
                 </div>
             </div>
-                <form (ngSubmit)="clearLocal()">
+                <form (ngSubmit)="clearLocal()" *ngIf="delete">
                     <input type="submit" value="Supprimer vos favoris" class="btn btn-primary delete">
                 </form>
         </div>

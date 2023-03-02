@@ -1,7 +1,16 @@
 <main>
     <h3 class="text" style="margin-left: 5px;">Concerts de {{artistName}}</h3>
     <div class="row">
-        <img src="../assets/images/googlemap.png" alt="Google Map" class="map">
+        <google-map
+         class="map"
+         width="50%"
+         [center]="center"
+         [zoom]="zoom">
+         <map-marker
+         *ngFor="let marker of markerPositions"
+         [position]="marker">
+         </map-marker>
+        </google-map>
         <div class="shows">
              <!-- Liste des concerts -->
             <div class="lesShow" *ngFor="let concert of stockage.concerts">
