@@ -12,7 +12,7 @@ constructor(public http : HttpClient) { }
 
 async getConcert(artistName : string) : Promise<Concert[]>
   {
-    let x = await lastValueFrom(this.http.get<any>("https://rest.bandsintown.com/artists/" + artistName +"/events?app_id=2b32475766802ac01eefda45e9e42ea0"));
+    let x = await lastValueFrom(this.http.get<any>("https://rest.bandsintown.com/artists/" + artistName +"/events?app_id=2b32475766802ac01eefda45e9e42ea0&date=upcoming"));
     console.log(x);
 
     let listeConcert : Concert[] = [];

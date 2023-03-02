@@ -58,7 +58,7 @@ export class SpotifyService
        };
        
        let x = await lastValueFrom(this.http.get<any>("https://api.spotify.com/v1/artists/" + artistId + 
-       "/albums?include_groups=album,single", httpOptions));
+       "/albums?include_groups=album", httpOptions));
        console.log(x);
        
        let albums = [];
