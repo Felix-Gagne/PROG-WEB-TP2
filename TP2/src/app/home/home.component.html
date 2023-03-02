@@ -1,7 +1,7 @@
 <main>
     <div class="row">
         <div class="search">
-            <h3 class="text" id="ajout"></h3>
+            <h3 class="text" id="ajout" [translate]="homeT.textAdd"></h3>
             <p class="textErrorExist" *ngIf="dejaPresent == true">Cet artiste est déjà dans vos favoris</p>
             <form (ngSubmit)="getArtist()">
                 <span class="row inputTextArtist">

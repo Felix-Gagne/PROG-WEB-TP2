@@ -15,9 +15,9 @@ export class AppComponent {
     translator.setDefaultLang(this.language);
   }
 
-  changeLanguage(lang : string):void{
+  changeLanguage(lang : string):void
+  {
     this.language = lang;
     this.translator.use(this.language);
-    console.log(this.language);
   }
 }
