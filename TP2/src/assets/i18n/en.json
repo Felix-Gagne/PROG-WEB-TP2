@@ -1,9 +1,31 @@
 {
-    "titre":{
-        "title":"SuperMusic"
+    "app":{
+        "titre":"SuperMusic",
+        "copy":"© All rights reserved to Spotify, BandsInTown and Google."
     },
 
     "home":{
-        "textAdd":"Add an artist"
+        "textAdd":"Add an artist",
+        "addButton":"Add",
+        "vosArtiste":"Your artists",
+        "albumButton":"Albums",
+        "concertButton":"Shows",
+        "supprimer":"Delete your favourites",
+        "alreadyExist":"This artist is already in your favourites."
+    },
+
+    "album":{
+        "title":"Albums of ",
+        "songBtn":"Songs"
+    },
+
+    "song":{
+        "title":"Songs of "
+    },
+
+    "concert":{
+        "title":"Shows of ",
+        "pays":"Country : ",
+        "ville":"City : "
     }
 }

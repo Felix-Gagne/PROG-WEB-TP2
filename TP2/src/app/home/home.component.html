@@ -1,30 +1,30 @@
 <main>
     <div class="row">
         <div class="search">
-            <h3 class="text" id="ajout" [translate]="homeT.textAdd"></h3>
-            <p class="textErrorExist" *ngIf="dejaPresent == true">Cet artiste est déjà dans vos favoris</p>
+            <h3 class="text" id="ajout" [translate]="'home.textAdd'"></h3>
+            <p class="textErrorExist" *ngIf="dejaPresent == true" [translate]="'home.alreadyExist'"></p>
             <form (ngSubmit)="getArtist()">
                 <span class="row inputTextArtist">
                     <input type="text" [(ngModel)]="artistName" name="artistName" placeholder="Drake">
                 </span>
                 <span class="row btnAjouter">
-                    <input type="submit" value="Ajouter" class="btn btn-primary rechercher" style="margin-left: 10px;">
+                    <button type="submit" value="Ajouter" [translate]="'home.addButton'" class="btn btn-primary rechercher" style="margin-left: 10px;"></button>
                 </span>
             </form>
         </div>
         <div class="display">
-            <h3 class="vosArtiste text">Vos artistes</h3>
+            <h3 class="vosArtiste text" [translate]="'home.vosArtiste'"></h3>
             <div class="row">
                 <!-- Liste d'artistes ajoutés aux favoris -->
                 <div *ngFor="let mesArtiste of stockage.artists">
                     <h4 class="text" style="text-align: center;">{{mesArtiste.name}}</h4>
                     <img src="{{mesArtiste.imageUrl}}" alt="{{mesArtiste.name}}">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album', mesArtiste.name]">Albums</button>
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/concert', mesArtiste.name]">Concerts</button>
+                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album', mesArtiste.name]" [translate]="'home.albumButton'"></button>
+                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/concert', mesArtiste.name]" [translate]="'home.concertButton'"></button>
                 </div>
             </div>
                 <form (ngSubmit)="clearLocal()" *ngIf="delete">
-                    <input type="submit" value="Supprimer vos favoris" class="btn btn-primary delete">
+                    <button type="submit" class="btn btn-primary delete">{{'home.supprimer' | translate}}</button>
                 </form>
         </div>
     </div>

@@ -2,7 +2,7 @@
     <header class="entete">
         <div class="row">
             <div class="col titreApp">
-                <h2 class="text" [routerLink]="'/home'" [translate]="'titre.title'"></h2>
+                <h2 class="text" [routerLink]="'/home'" [translate]="'app.titre'"></h2>
             </div>
             <div class="col menuLangue">
                 <button class="btn btn-primary langue" (click)="changeLanguage('fr')">Français</button>
@@ -15,7 +15,7 @@
 
     <footer>
         <div class="text">
-            &copy; Tous droits réservés à Spotify, BandsInTown et Google
+        <p [translate]="'app.copy'" style="display: block;"></p>
         </div>
     </footer>
 </div>

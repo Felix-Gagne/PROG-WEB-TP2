@@ -4,8 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Pipe({
   name: 'trust'
 })
-export class TrustPipe implements PipeTransform 
-{
+export class TrustPipe implements PipeTransform {
 
   constructor(public sanitizer : DomSanitizer){}
   

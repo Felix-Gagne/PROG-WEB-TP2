@@ -1,9 +1,33 @@
 {
-    "titre":{
-        "title":"SuperMusique"
+    "app":{
+        "titre":"SuperMusique",
+        "copy":"© Tous droits réservés à Spotify, BandsInTown et Google."
     },
 
-    "homeT":{
-        "textAdd":"Ajouter un artiste"
+    "home":{
+        "textAdd":"Ajouter un artiste",
+        "addButton":"Ajouter",
+        "vosArtiste":"Vos artistes",
+        "albumButton":"Albums",
+        "concertButton":"Concerts",
+        "supprimer":"Supprimer vos favoris",
+        "alreadyExist":"Cet artiste est déjà dans vos favoris."
+    },
+
+    "album":{
+        "title":"Album de ",
+        "songBtn":"Chansons"
+    },
+
+    "song":{
+        "title":"Chansons de "
+    },
+
+    "concert":{
+        "title":"Concert de ",
+        "pays":"pays : ",
+        "ville":"ville : "
     }
+
+
 }

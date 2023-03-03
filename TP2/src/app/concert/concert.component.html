@@ -1,5 +1,5 @@
 <main>
-    <h3 class="text" style="margin-left: 5px;">Concerts de {{artistName}}</h3>
+    <h3 class="text" style="margin-left: 5px;"><span [translate]="'concert.title'"></span>{{artistName}}</h3>
     <div class="row mapDiv">
         <google-map
         class="myMap"
@@ -15,8 +15,8 @@
              <!-- Liste des concerts -->
             <div class="lesShow" *ngFor="let concert of stockage.concerts">
                 <h4 class="text">{{concert.date | date : 'medium' }}</h4>
-                <p class="text">Pays : {{concert.country}}</p>
-                <p class="text">Ville : {{concert.city}}</p>
+                <p class="text"><span [translate]="'concert.pays'"></span>{{concert.country}}</p>
+                <p class="text"><span [translate]="'concert.ville'"></span>{{concert.city}}</p>
             </div>
         </div>
     </div>

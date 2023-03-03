@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../services/spotify.service';
 import { Artist } from '../modele/artist';
 import { StockageService } from '../services/stockage.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   jsonData : string | null = null;
@@ -19,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   dejaPresent : boolean = false;
 
-  constructor(public spotify : SpotifyService, public stockage : StockageService) { 
+  constructor(public spotify : SpotifyService, public stockage : StockageService, public translator : TranslateService) { 
   }
 
   ngOnInit(): void 

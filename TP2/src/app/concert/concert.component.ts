@@ -27,8 +27,9 @@ export class ConcertComponent implements OnInit {
   {
     this.artistName = this.route.snapshot.paramMap.get("artistName");
     this.getConcert();
+    console.log(this.stockage.concerts);
     this.createMarker();
-    console.log(this.getConcert());
+    console.log(this.markerPositions);
   }
 
   async getConcert()
@@ -48,6 +49,5 @@ export class ConcertComponent implements OnInit {
         this.markerPositions.push({lat : parseFloat(this.stockage.concerts[i].lat), lng : parseFloat(this.stockage.concerts[i].lon)});
       }
     }
-    console.log(this.markerPositions);
   }
 }

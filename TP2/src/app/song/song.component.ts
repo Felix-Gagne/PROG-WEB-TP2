@@ -32,6 +32,7 @@ export class SongComponent implements OnInit {
     this.albumName = this.route.snapshot.paramMap.get("albumName");
     this.artistName = this.route.snapshot.paramMap.get("artistName");
     this.getSongs();
+    console.log(this.stockage.songs);
   }
 
   async getSongs() : Promise<void>

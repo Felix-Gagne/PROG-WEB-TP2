@@ -251,9 +251,10 @@ main>h3{
     margin-top:10px;
 }
 
-.songPlayer{
-    width: 1400px;
-    height: 800px;
+.video{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 /*
