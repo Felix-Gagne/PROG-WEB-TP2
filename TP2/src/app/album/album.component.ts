@@ -12,7 +12,7 @@ import { StockageService } from '../services/stockage.service';
 export class AlbumComponent implements OnInit {
 
   artistName : string | null = null;
-  artistId : string="";
+  artistId : string | null = null;
 
   constructor(public route : ActivatedRoute, public spotify : SpotifyService, public stockage : StockageService) { }
 
@@ -20,29 +20,17 @@ export class AlbumComponent implements OnInit {
   {
     this.spotify.connect();
     this.artistName = this.route.snapshot.paramMap.get("artistName");
+    this.artistId = this.route.snapshot.paramMap.get("artistId");
     this.getAlbum();
   }
 
   async getAlbum() : Promise<void>
   {
-    for(let artist of this.stockage.artists)
-    {
-      if(artist.name == this.artistName)
-      {
-        this.artistId = artist.id;
-      }
-    }
-
     if(this.artistId != null)
     {
       this.stockage.albums = await this.spotify.searchAlbum(this.artistId);
     }
     console.log(this.stockage.albums);
-  }
-
-  async getSongs() : Promise<void>
-  {
-
   }
 
 }

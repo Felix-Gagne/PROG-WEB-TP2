@@ -19,7 +19,7 @@
                 <div *ngFor="let mesArtiste of stockage.artists">
                     <h4 class="text" style="text-align: center;">{{mesArtiste.name}}</h4>
                     <img src="{{mesArtiste.imageUrl}}" alt="{{mesArtiste.name}}">
-                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album', mesArtiste.name]" [translate]="'home.albumButton'"></button>
+                    <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/album', mesArtiste.name, mesArtiste.id]" [translate]="'home.albumButton'"></button>
                     <button class="btn btn-primary btnAlbumConcert" [routerLink]="['/concert', mesArtiste.name]" [translate]="'home.concertButton'"></button>
                 </div>
             </div>

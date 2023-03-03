@@ -35,9 +35,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     RouterModule.forRoot([
       {path: "", redirectTo: "/home", pathMatch: "full"},
       {path: "home", component: HomeComponent},
-      {path: "album/:artistName", component: AlbumComponent},
+      {path: "album/:artistName/:artistId", component: AlbumComponent},
       {path: "concert/:artistName", component: ConcertComponent},
-      {path: "song/:albumName/:artistName", component: SongComponent}
+      {path: "song/:albumName/:albumId/:artistName", component: SongComponent}
     ]),
     TranslateModule.forRoot({
       loader: {

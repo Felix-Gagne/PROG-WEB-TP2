@@ -14,9 +14,10 @@ import { StockageService } from '../services/stockage.service';
 })
 export class SongComponent implements OnInit {
 
-  albumName : string | null = null;
+  albumId : string | null = null;
   artistName : string | null = null;
   album ?: Album;
+  albumName : string | null = null;
 
   songId : string = "";
   songUrl : string = "";
@@ -29,25 +30,18 @@ export class SongComponent implements OnInit {
 
   ngOnInit(): void 
   {
-    this.albumName = this.route.snapshot.paramMap.get("albumName");
+    this.albumId = this.route.snapshot.paramMap.get("albumId");
     this.artistName = this.route.snapshot.paramMap.get("artistName");
+    this.albumName = this.route.snapshot.paramMap.get("albumName");
     this.getSongs();
     console.log(this.stockage.songs);
   }
 
   async getSongs() : Promise<void>
   {
-    for(let lesAlbums of this.stockage.albums)
+    if(this.albumId != null)
     {
-      if(lesAlbums.name == this.albumName)
-      {
-        this.album = lesAlbums;
-      }
-    }
-
-    if(this.album != undefined)
-    {
-      this.stockage.songs = await this.spotify.getSongs(this.album);
+      this.stockage.songs = await this.spotify.getSongs(this.albumId);
     }
   }
 

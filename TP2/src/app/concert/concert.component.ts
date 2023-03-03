@@ -6,7 +6,7 @@ import { Artist } from './../modele/artist';
 import { ActivatedRoute, ROUTER_CONFIGURATION } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Concert } from '../modele/concert';
-import { Markers } from '../modele/markers';
+
 
 @Component({
   selector: 'app-concert',
@@ -18,25 +18,22 @@ export class ConcertComponent implements OnInit {
   artistName : string | null = null;
   center : google.maps.LatLngLiteral = {lat: 42, lng: -4};
   zoom : number = 5;
-  courantMarker ?: Markers;
   markerPositions : google.maps.LatLngLiteral[] = [];
 
   constructor(public route : ActivatedRoute, public http : HttpClient, public stockage : StockageService, public bandsintown : BandsintownService) { }
 
-  ngOnInit(): void 
+  async ngOnInit(): Promise<void> 
   {
     this.artistName = this.route.snapshot.paramMap.get("artistName");
-    this.getConcert();
-    console.log(this.stockage.concerts);
-    this.createMarker();
-    console.log(this.markerPositions);
+    await this.getConcert();
+    await this.createMarker();
   }
 
   async getConcert()
   {
     if(this.artistName != null)
     {
-     this.stockage.concerts = await this.bandsintown.getConcert(this.artistName);
+      this.stockage.concerts = await this.bandsintown.getConcert(this.artistName);
     }
   }
 
@@ -46,7 +43,7 @@ export class ConcertComponent implements OnInit {
     {
       if(this.stockage.concerts[i] != undefined)
       {
-        this.markerPositions.push({lat : parseFloat(this.stockage.concerts[i].lat), lng : parseFloat(this.stockage.concerts[i].lon)});
+        await this.markerPositions.push({lat : parseFloat(this.stockage.concerts[i].lat), lng : parseFloat(this.stockage.concerts[i].lon)});
       }
     }
   }
