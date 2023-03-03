@@ -20,7 +20,8 @@
     },
 
     "song":{
-        "title":"Songs of "
+        "title":"Songs of ",
+        "play":"Play"
     },
 
     "concert":{
